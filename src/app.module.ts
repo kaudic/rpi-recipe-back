@@ -4,6 +4,9 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UploadModule } from './upload/upload.module';
+import { RecipeModule } from './recipe/recipe.module';
+import { TypeModule } from './type/type.module';
+
 const environmentModule = ConfigModule.forRoot({
   isGlobal: true,
 });
@@ -28,6 +31,8 @@ const environmentModule = ConfigModule.forRoot({
       }),
     }),
     UploadModule,
+    RecipeModule,
+    TypeModule,
   ],
   controllers: [AppController],
   providers: [AppService],
